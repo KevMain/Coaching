@@ -1,0 +1,33 @@
+@using Run_coaching
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paceframe Coaching</title>
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="brand">Paceframe Coaching</div>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/About">About</a>
+                <a href="/Services">Services</a>
+                <a href="/Contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© Paceframe Coaching</div>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
