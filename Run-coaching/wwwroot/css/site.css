@@ -49,6 +49,38 @@ body{
   .hero .hero-right{flex:1}
 }
 
+/* Standout visual enhancements */
+.hero{
+  position:relative;
+}
+.hero-right{position:relative}
+.hero-deco{
+  position:absolute; right:-6%; top:8%; width:420px; height:420px; pointer-events:none; z-index:0; transform:rotate(14deg); filter:blur(10px);
+  background: linear-gradient(135deg, rgba(11,110,98,0.18) 0%, rgba(255,122,61,0.12) 60%);
+  border-radius:40px;
+}
+.hero-card{position:relative; z-index:2}
+.hero-image img{display:block; width:100%; height:auto; border-radius:10px}
+
+/* Bigger, more distinctive headline */
+.hero h1{font-size:2rem; letter-spacing:-0.02em; font-weight:700; color:var(--text-dark)}
+@media(min-width:720px){
+  .hero h1{font-size:3rem}
+}
+
+/* Elevated CTA */
+.btn-primary{background:linear-gradient(90deg,var(--brand-teal), #0f9c86); box-shadow:0 10px 30px rgba(11,110,98,0.18); padding:0.8rem 1.2rem; border-radius:12px}
+.btn-primary:hover{transform:translateY(-3px); box-shadow:0 16px 36px rgba(11,110,98,0.22)}
+.btn-accent{background:linear-gradient(90deg,var(--brand-accent), var(--brand-accent-dark)); box-shadow:0 8px 24px rgba(240,100,60,0.12)}
+
+/* subtle motion */
+@keyframes floatY {0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+.badge{animation:floatY 6s ease-in-out infinite}
+
+/* Improve section separators */
+.section{position:relative}
+.section:before{content:""; position:absolute; left:50%; transform:translateX(-50%); top:0; width:56px; height:4px; background:linear-gradient(90deg,var(--brand-teal),var(--brand-accent)); border-radius:4px; opacity:0.12}
+
 /* Sections and cards */
 .section{padding:2.5rem 0}
 .muted{color:var(--muted)}
@@ -57,4 +89,26 @@ body{
 .badge{background:#fff; padding:0.5rem 0.75rem; border-radius:8px; box-shadow:0 4px 12px rgba(15,23,42,0.04); font-size:0.9rem}
 
 .site-footer{padding:2rem 0; color:var(--muted); font-size:0.95rem}
+
+/* Form styles */
+.hero-card form{display:grid; gap:.75rem}
+.hero-card label{display:block; margin-bottom:.25rem; font-weight:600; color:var(--text-dark)}
+.hero-card input[type="text"], .hero-card input[type="email"], .hero-card input[type="tel"], .hero-card input[type="number"],
+.hero-card textarea, .hero-card select{
+  width:100%; padding:.65rem .75rem; border-radius:8px; border:1px solid #e6e9eb; font-size:1rem; color:var(--text-dark);
+}
+.hero-card textarea{min-height:120px}
+.hero-card .form-row{display:block}
+
+@media(min-width:720px){
+  .hero-card form{grid-template-columns:1fr 1fr}
+  /* make full-width rows span two columns */
+  .hero-card textarea, .hero-card .full-span{grid-column:1 / -1}
+}
+
+.hero-card .btn{margin-top:.5rem}
+
+/* Accessibility focus styles */
+button:focus, input:focus, textarea:focus, select:focus{outline:3px solid rgba(11,110,98,0.15); outline-offset:2px}
+
 
